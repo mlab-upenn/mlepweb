@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MLE+ Matlab EnergyPlus Co-Simulation Toolbox for Energy Efficient Buildings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- <[if lt IE 9]> -->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!-- <![endif]> -->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-∑precomposed.png">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">MLE+</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html">Home</a> <!-- ./index.html-->
+              </li>
+              <li class="">
+                <a href="./tutorial.html">Tutorial</a>
+              </li>
+              <li class="">
+                <a href="https://github.com/mlab/mlep_v1.1/wiki/Troubleshooting">Troubleshooting</a>
+              </li>
+              <!--<li class="">
+                <a href="./index.html">Components</a>
+              </li>
+	      -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>MLE+ Toolbox!</h1>
+    <p class="lead">MLE+ is a tool for energy-efficient building automation design, co-simulation and analysis.</p>
+    <!--<p>MLE+ is an open-source Matlab/Simulink toolbox for co-simulation with the whole-building energy simulator EnergyPlus. It is designed for engineers and researchers who are familiar with Matlab and Simulink and want to use these software tools in building energy simulation.</p>-->
+    <p><a href="http://mlab.seas.upenn.edu/mlep/googleForm.html" target="_blank" class="btn btn-primary btn-large">Download &raquo;</a> <a class="lead" href="http://repository.upenn.edu/mlab_papers/51">  ACM BuildSys 2012 MLE+ Paper</a></p> <!--http://eepurl.com/rGEUj-->
+    <!-- <p class="lead">MLE+ is a tool for energy-efficient building automation design, co-simulation and analysis.</p> --> 
+  </div>
+</header>
+
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#introduction"><i class="icon-chevron-right"></i> Introduction</a></li>
+          <li><a href="#publication"><i class="icon-chevron-right"></i> Publications</a></li>
+	  <li><a href="#award"><i class="icon-chevron-right"></i> Awards</a></li>
+	  <li><a href="#requirements"><i class="icon-chevron-right"></i> Requirements</a></li>
+          <li><a href="#installation"><i class="icon-chevron-right"></i> Installation</a></li>
+          <li><a href="#tutorial"><i class="icon-chevron-right"></i> Tutorial-Videos</a></li>
+          <li><a href="#contact"><i class="icon-chevron-right"></i> Contact us</a></li>
+          <!--<li><a href="#videos"><i class="icon-chevron-right"></i> Videos</a></li>-->
+	  <!--<li><a href="#testCases"><i class="icon-chevron-right"></i> Test Cases</a></li>
+          <li><a href="#development"><i class="icon-chevron-right"></i> Development</a></li>-->
+        </ul>
+      </div>
+      <div class="span9">
+
+        <!-- Introduction
+        ================================================== -->
+        <section id="introduction">
+          <div class="row">
+            <div class="page-header">
+              <h1>Introduction</h1>
+            </div>
+            <p>MLE+ is an open-source Matlab/Simulink toolbox for co-simulation with the whole-building energy simulator <a href="http://apps1.eere.energy.gov/buildings/energyplus/">EnergyPlus</a>. It is designed for engineers and researchers who are familiar with Matlab and Simulink and want to use these software tools in building energy simulation. The following are the main features of MLE+:</p>
+            
+                  <!--  Carousel -->
+      <!--  consult Bootstrap docs at 
+            http://twitter.github.com/bootstrap/javascript.html#carousel -->
+      <div id="this-carousel-id" class="carousel slide">
+        <div class="carousel-inner">
+	  <div class="item active">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/overview_test2.png" alt="MLE+ Overview" />
+            </a>
+            <div class="carousel-caption">
+              <p>MLE+ Overview</p>
+              <p><a>MLE+ Architecture &raquo;</a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/startup.png" alt="Start Screen" />
+            </a>
+            <div class="carousel-caption">
+              <p>Initial Screen</p>
+              <p><a>Select EnergyPlus and weather file &raquo;</a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/variable.png" alt="Variable Screen" />
+            </a>
+            <div class="carousel-caption">
+              <p>Variable Screen</p>
+              <p><a>Select In/Out Variables &raquo;</a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/control.png" alt="Control Screen" />
+            </a>
+            <div class="carousel-caption">
+              <p>Control Screen</p>
+              <p><a>Design the Control file &raquo;</a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/code1.png" alt="Matlab Code" />
+            </a>
+            <div class="carousel-caption">
+              <p>Matlab Control Code</p>
+              <p><a href="http://mlab.seas.upenn.edu/mlep">You can design your control loop in a regular Matlab file &raquo;</a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://mlab.seas.upenn.edu/mlep">  <img src="assets/img/simulate.png" alt="Simulation Screen" />
+            </a>
+            <div class="carousel-caption">
+              <p>Simulation & Visualization Screen</p>
+              <p><a href="http://mlab.seas.upenn.edu/mlep">You can simulate and visualize the results &raquo;</a></p>
+            </div>
+          </div>
+        </div><!-- .carousel-inner -->
+        <!--  next and previous controls here
+              href values must reference the id for this carousel -->
+          <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+      </div><!-- .carousel -->
+      <!-- end carousel -->
+	    <!--<table class="image" align="center" >-->
+            <!--  <caption align="bottom">Figure 1. MLE+ Overview</caption>-->
+            <!--  <tr><td><img src="assets/img/overview.png" alt="Not supported" width="600" height="400"/></td></tr>-->
+            <!--</table>-->
+            
+            <h3>1. Simulation configuration:</h3>
+            <p>The MLE+ front-end streamlines the con- figuration process of linking the building model and the controllers by ab- stracting the necessary parameters from the co-simulation. This reduces setup time and configuration problems. </p>
+            
+            <h3>2. Controller design:</h3>
+            <p>MLE+ provides a control development workflow as well as graphical front-ends for designing advanced control strategies, in which the building simulation is carried out by EnergyPlus while the controllers are implemented in Matlab or Simulink.</p>
+            
+            <h3>3. Simulation-based optimization:</h3>
+            <p>MLE+ can be used to find optimal parameters or control sequences for building system simulations in EnergyPlus.</p>
+            
+            <h3>4. Data analysis:</h3>
+            <p>After a co-simulation run, using MLE+, the output data from EnergyPlus can be aggregated, analyzed and visualized in Matlab. </p>
+            
+            <h3>5. Building Management System Interface: </h3>
+            <p>MLE+ provides a BAC- net interface to develop and implement control methods for real building equipment.</p>
+            
+            <h3>6. Matlab environment:</h3>
+            <p>MLE+ allows complete access to the Matlab environment and toolboxes such as Global Optimization Toolbox, System Identification Toolbox and Model Predictive Control Toolbox. The user can step through the code for debugging and pause the co-simulation at any time.</p>
+        </div>
+          
+          
+        </section>
+
+	        <!-- Publication                                                                                                                                                  
+        ================================================== -->
+        <section id="publication">
+          <div class="row">
+            <div class="page-header">
+              <h1>Publications</h1>
+            </div>
+            <p>MLE+ has been presented at the 4th ACM Workshop On Embedded Sensing Systems For Energy-Efficiency In Buildings. You can review the paper in the following link</p>
+	    
+
+            <p><a class="lead" href="http://repository.upenn.edu/mlab_papers/51">MLE+: A Tool for Integrated Design and Deployment of Energy Efficient Building Controls</a></p>
+	    <p>Please cite MLE+ in the following form.</p>
+	    
+	    <BLOCKQUOTE>
+	      <p>Willy Bernal, Madhur Behl, Truong X. Nghiem, and Rahul Mangharam. (2012). <strong>MLE+: A Tool for Integrated Design and Deployment of Energy Efficient Building Controls. </strong>4th ACM Workshop On Embedded Sensing Systems For Energy-Efficiency In Buildings, (BuildSys '12), Toronto, Canada.</p>
+	    </BLOCKQUOTE>
+	    
+	    <div class="alert alert-info" id="input_help_section">
+	    </div>
+
+	    <div class="well" id="markdownCheatsheet" >
+              <p> <font size="2">
+              @article{MLEP12,<br />
+	      name = {MLE+: A Tool for Integrated Design and Deployment of Energy Efficient Building Controls.},<br />
+	      author = {Willy Bernal, Madhur Behl, Truong X. Nghiem, and Rahul Mangharam},<br />
+	      url = {http://repository.upenn.edu/mlab_papers/51/},<br />
+	      year  = {2012},<br />
+	      date = {2012-11-06},<br />
+	      journal = {4th ACM Workshop On Embedded Sensing Systems For Energy-Efficiency In Buildings, (BuildSys '12), Toronto, Canada.},<br />
+	      }</font>
+              </p>
+	    </div>
+          </div>
+        </section>
+
+                <!-- Awards                                                                                                                                                     
+        ================================================== -->
+        <section id="award">
+          <div class="row">
+            <div class="page-header">
+              <h1>Awards</h1>
+            </div>
+            <p>MLE+ has received the Best Demo Award at the 4th ACM Workshop On Embedded Sensing Systems For Energy-Efficiency In Buildings (Toronto, Canada 2012). You can view details about the conference at the following link</p>
+
+
+            <p><a class="lead" href="http://www.buildsys.org/2012/">Best Demo Award for MLE+</a></p>
+
+          </div>
+        </section>
+
+        <!-- Requirements
+        ================================================== -->
+        <section id="requirements">
+          <div class="row">
+            <div class="page-header">
+              <h1>Requirements</h1>
+            </div>
+            <h3>1. Windows Operating System.</h3>
+            <p>Currently, MLE+ is only supported in Windows. However,
+                we are working in making MLE+ compatible in the Linux and Mac OS platforms.</p>
+            
+            <h3>2. MLE+ requires Matlab and/or Simulink of recent versions.</h3>
+            <p>MLE+ uses the GUILayout Toolbox. This is included in the MLE+ distribution. MLE+ has been tested
+                in Matlab 2011a and 2012a versions1.</p>
+            
+            <h3>3. Java must be enabled in Matlab.</h3>
+            <p>By default, Java is already enabled in Matlab, so no
+                further action is required. The Java socket library is used by MLE+ for communication
+                with EnergyPlus.</p>
+            
+            <h3>4. EnergyPlus version 8.0.0 (latest).</h3>
+            <p>MLE+ should work well with previous versions of
+                EnergyPlus: versions 7.0.0 and 6.0.0. However, it has not been tested thoroughly. We
+                strongly recommend to download EnergyPlus 8.0.0 as the example files correspond to
+                this version.</p>
+          </div>
+        </section>
+
+        <!-- Installation
+        ================================================== -->
+        <section id="installation">
+          <div class="row">
+            <div class="page-header">
+              <h1>Installation</h1>
+            </div>
+            <h3>1. Download MLE+</h3>
+            <p>You can download the latest version from <a href="https://github.com/mlab/mlep_v1.1/zipball/master">here</a> or
+            clone this <a href="https://github.com/mlab/mlep_v1.1">repository</a></p>
+            
+            <h3>2. Extract files</h3>
+            <p>Extract all files to a directory in your computer, for example C:\software\mlep.</p>
+            
+            <h3>3. Matlab</h3>
+            <p>3. Open Matlab and change the current directory to the C:\software\mlep\MLE+ folder
+            that has just been created.</p> 
+            
+            <h3>4. Run installMlep.m</h3>
+            <p>In Matlab, run the installation script installMlep.m located in C:\software\mlep\MLE+\installMlep.m and
+            follow the instructions. This will install the GUI Layout Toolbox and add the necessary
+            paths to the Matlab environment automatically.</p>
+
+            <h3>5. Installation Screen</h3>
+            <p>At this point, the installation screen in Figure 2 will appear. Here you need to specify the paths to EnergyPlus main Directory and the path to the folder with Java binaries. Also, this will replace your
+            RunEPlus.batch file (in Windows).</p>
+
+            <table class="image" align="center" >
+              <caption align="bottom">Figure 2. Installation Screen</caption>
+              <tr><td><img src="assets/img/installation.png" alt="Pulpit rock" width="600" height="400"/></td></tr>
+            </table>
+
+          </div>
+        </section>
+
+
+
+        <!-- Tutorial
+        ================================================== -->
+        <section id="tutorial">
+          <div class="row">
+            <div class="page-header">
+              <h1>Tutorial</h1>
+            </div>
+            <p>The tutorial walks you through the installation and includes detailed steps to get MLE+ running. It also provides sample project that you can load and run in your computer.</p>
+
+            <p>You can download MLE+ Tutorial <a href="https://seas.upenn.edu/~willyg/mleplustutorial.pdf ">here</a>. This tutorial is also included in MLE+ distribution</p>
+            <h1>Videos</h1>
+	    <p>The following videos help you getting started with MLE+.</p>
+	    <ol>
+	      <li>Video 1 - MLE+ Introduction</li>
+	      <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/f5OT14CyYpw" frameborder="0" allowfullscreen></iframe>
+	      <li>Video 2 - Getting Started</li>
+              <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/pemLA4MxIDU" frameborder="0" allowfullscreen></iframe>
+	      <li>Video 3 - Shading Example Tutorial</li>
+              <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/-Wb3bWyY1GU" frameborder="0" allowfullscreen></iframe>
+	      <li>Video 4 - Simulink Example</li>
+	      <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/Pv5qIrgC4GE" frameborder="0" allowfullscreen></iframe>
+	    </ol>
+          </div>
+        </section>
+        
+                <!-- Contact us                                                                                                                                                     
+        ================================================== -->
+        <section id="contact">
+          <div class="row">
+            <div class="page-header">
+              <h1>Contact Info</h1>
+            </div>
+            <p>MLE+ is being developed by a group of students and faculty at the Embedded Systems Laboratory at the University of Pennsylvania. If you have any questions about MLE+ or have any comments please feel free to contact the developing team.</p>
+	    <ol>
+	      <li>Willy Bernal</li>
+	      <img src="assets/img/willy-email.png" alt="some_text">
+	      
+	      <li>Truong Nghiem</li>
+	      <img src="assets/img/truong-email.png" alt="some_text">
+	            
+	      <li>Madhur Behl</li>
+              <img src="assets/img/madhur-email.png" alt="some_text">
+	      
+	      <li>Rahul Mangharam</li>
+	      <img src="assets/img/rahul-email.png" alt="some_text">
+	        
+	    </ol>	  
+          </div>
+        </section>
+                                                                                                                     
+        <!-- End Last Section
+        ================================================== -->
+
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Developed by <a href="http://mlab.seas.upenn.edu" target="_blank">mLab</a> at the <a href="http://www.upenn.edu" target="_blank">University of Pennsylvania</a>.
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <!--<script src="assets/js/jquery.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel({
+          interval: 6000
+        });
+      });
+    </script>  
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
+
