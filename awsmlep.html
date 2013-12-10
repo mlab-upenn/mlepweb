@@ -62,7 +62,7 @@
 
 <!-- Subhead
 ================================================== -->
-<header class="jumbotron subhead" id="overview">
+<header class="jumbotron subhead" id="title">
   <div class="container">
     <h1>MLE+: Cloud-Based Optimization</h1>
     <p class="lead">Cloud-Based Optimization powered by Amazon Web Services (AWS)</p>
@@ -78,14 +78,11 @@
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
-          <li><a href="#building"><i class="icon-chevron-right"></i> Parametric Analysis</a></li>
-          <li><a href="#workflow"><i class="icon-chevron-right"></i> Optimization</a></li>
-          <li><a href="#setup"><i class="icon-chevron-right"></i> Functions Description</a></li>
-          <li><a href="#configure"><i class="icon-chevron-right"></i> Examples</a></li>
-          <li><a href="#design"><i class="icon-chevron-right"></i> API</a></li>
-          <li><a href="#simulate"><i class="icon-chevron-right"></i> GUI</a></li>
-          <li><a href="#settings"><i class="icon-chevron-right"></i> Parametric Analysis</a></li>
-          <li><a href="#projects"><i class="icon-chevron-right"></i> Optimization</a></li>
+          <li><a href="#Installation"><i class="icon-chevron-right"></i> Installation</a></li>
+          <li><a href="#mlepaws_API"><i class="icon-chevron-right"></i> mlepaws API</a></li>
+          <li><a href="#run_on_cloud"><i class="icon-chevron-right"></i> E+ vs. MLE+ in the cloud</a></li>
+          <li><a href="#examples"><i class="icon-chevron-right"></i> Examples</a></li>
+          
         </ul>
       </div>
       <div class="span9">
@@ -124,235 +121,81 @@
 
         <!-- Building
         ================================================== -->
-        <section id="building">
+        <section id="Installation">
           <div class="row">
             <div class="page-header">
-              <h1>1. Building</h1>
-            </div>
-              <p>A single-storied building shown in Figure 1 consists of three zones with a total floor area of 130m2. The West zone of the building consists of a large window equipped with blinds/shades and is subject to strong solar radiation during the day. The goal is to control the window shade deployment of the West zone such that the transmitted solar radiation 4
-              (through the window) never exceeds a certain threshold. The window blinds can be controlled
-              using two EnergyPlus variables:</p> 
+              <h1>Installation</h1>
 
-              <ol>
-                  <li>Shading_Deployment_Status controls whether the blinds are deployed or not;</li>
-                  <li>ShadeAngle_Schedule controls the slat angle so it is perpendicular to the incident
-                    solar radiation whenever the blinds are deployed.</li>
-              </ol>
-              <p>We will design a controller in MLE+ which monitors the angle and intensity of the solar
-              radiation incident on the West zone window. If the incident solar radiation exceeds a certain
-              threshold, the blinds will be deployed and the shade angle will be set to reduce the possibility
-              of glare.</p>
-
-            <table class="image" align="center" vspace="30" >
-              <caption align="bottom">Figure 1. EnergyPlus window shading control model.</caption>
-              <tr><td><img src="assets/img/buildingcad.jpg" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>
-          </div>
         </section>  
 
         <!-- Workflow
         ================================================== -->
-        <section id="workflow">
+        <section id="mlepaws_API">
           <div class="row">
             <div class="page-header">
-              <h1>2. The MLE+ Control Design Workflow</h1>
+              <h1>mlepaws: Function API</h1>
             </div>
-            <table class="image" align="center"  vspace="30">
-              <caption align="bottom">Figure 2. MLE+ control design workflow</caption>
-              <tr><td><img src="assets/img/workflow.png" alt="Pulpit rock" width="800" height="400"/></td></tr>
-            </table> 
-              <p>The control design workflow of MLE+ defines a sequence of steps for designing a controller
-                in Matlab for a building model simulated by EnergyPlus. A graphical front-end is
-                provided to support this workflow. To start the front-end, execute the command mlep in
-                Matlab. This will open a graphical interface as shown in Figure 4.</p>
+              <h3>mlepAwsProcess</h3>
+              <p>Class that encompasses the following methods</p>
+              <h4>createEC2Client</h4>
+              <p></p>
+              <h4>initEC2Client</h4>
+              <p></p>
+              <h4>initAwsInstance</h4>
+              <p></p>
+              <h4>getAwsInstanceInfo</h4>
+              <p></p>
+              <h4>removeFolderOnAws</h4>
+              <p></p>
+              <h4>pushToAWS</h4>
+              <p></p>
+              <h4>pushAllToAWS</h4>
+              <p></p>
+              <h4>runSimulationOnAWSep</h4>
+              <p></p>
+              <h4>runSimulationOnAWSmlep</h4>
+              <p></p>
+              <h4>moveFileOnAWS  </h4>
+              <p></p>
+              <h4>fetchDataOnAWS</h4>
+              <p></p>
+   
+         
  
 
           </div>
         </section> 
         <!-- Setup E+
         ================================================== -->
-        <section id="setup">
+        <section id="run_on_cloud">
           <div class="row">
             <div class="page-header">
-              <h1>3. Set Up EnergyPlus Simulation Model</h1>
+              <h1> E+ vs. MLE+ in the cloud</h1>
             </div>
-              <p>First, we need to specify the EnergyPlus building model and the weather profile to be used
-              for simulation (Figure 4).</p>
-              <ol>
-                <li>Click the button Select IDF file and select the file EMSWindowShadeControl.idf
-                  located in the folder C:\software\mlep\ShadingProject.</li>
-                <li>Click the button Select weather file and select the weather file USA_IL_Chicago-OHare.Intl.AP.725300.We will use the weather profile of Chicago for our simulation.</li>
-              </ol>
-            <table class="image" align="center" vspace="30" >
-              <caption align="bottom">Figure 3. Graphical front-end for the MLE+</caption>
-              <tr><td><img src="assets/img/start.png" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>   
+              <p>Running E+ files for design optimization/parametric analysis. </p>   
+              <p>Running MLE+ files (.jar file) for control knob (e.g. Temp SP) optimization/parametric analysis. </p>
           </div>
         </section>         
 
         <!-- Configure
         ================================================== -->
-        <section id="configure">
+        <section id="examples">
           <div class="row">
             <div class="page-header">
-              <h1>4. Configure Input and Output Variables Between EnergyPlus and Matlab</h1>
+              <h1>Examples </h1>
             </div>
+              <h3>Parametric Analysis</h3>
 
- 
+              <h3>Optimization</h3>
 
-              <p>We will set up the input and output variables to be exchanged between EnergyPlus andMatlab for co-simulation. An input variable serves as an input to EnergyPlus at each stepof the co-simulation, while output variables are those which can be repeatedly read fromEnergyPlus to monitor its internal state.</p>
-              <ol>
-                <li>Select the Control Tab (Figure 4)</li>
-                <li>In the Control Tab, push the Variable button to open the Variable Configuration Window (Figure 6).</li>
-                <li>Load the .idf file by pushing the Load IDF button. This will list the available ExternalInterface:Schedule, ExternalInterface:Actuator and ExternalInterface:Variable
-                  objects from the idf file. It will also list the available Output:Variable objects.</li>
-                <li>Add the necessary inputs and outputs to have the settings specified in Figure 7 and
-                  Figure 8, respectively. In this example, we specify Shading_Deployment_Status and
-                  ShadeAngle_Schedule as the inputs to EnergyPlus as these are the variables that we
-                  will control through MLE+. Make sure your configuration is exactly the same as the
-                  one shown in Figure 7 and Figure 8.</li>
-                <li>Once the input and output variables had been set, push the green buttonWrite Variables.
-                  cfg. This file will create a file with the communication configuration between
-                  Matlab and EnergyPlus. It should also be printed in the Matlab command line.</li>
-                <li>Close the Variable Configuration Window: either click on the Close Screen button
-                  (bottom right) or the X window button.</li>
-              </ol>
-              <p>In MLE+, an alias is specified for each of the communication variables (Figure 7 and
-                Figure 8). The alias allows the user to reference a variable with a more intuitive name
-                and avoid the intricate names specified by EnergyPlus. For instance, the EnergyPlus variable
-                Zn001_Wall001_Win001_Shading_Deployment_Status can be assigned a more intuitive
-                name as ShadeStatus.</p>
+              <h4> Genetic Algorithm</h4>
 
-            <table class="image" align="center" vspace="30" >
-              <caption align="bottom">Figure 4. MLE+ control design tab.</caption>
-              <tr><td><img src="assets/img/variable.png" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>   
 
 
           </div>
         </section>  
 
-        <!-- Design
-        ================================================== -->
-        <section id="design">
-          <div class="row">
-            <div class="page-header">
-              <h1>5. Design a Shading Controller</h1>
-            </div>
-              <p>In the control tab, we will specify the controller, implemented in Matlab, for our building
-                model (Figure 9).</p>
-              <ol>
-                <li>Click the button Load Control File and select the file control_file_blind_angle.m.
-                  This file contains the Matlab code for the shading controller.</li>
-                <li>View and edit this file by clicking the button Edit Control File. You can also create
-                  a template file for your own feedback loop by clicking on Create Control File. This
-                  creates the file controlFile.m.</li>
-              </ol>
-              <p>he input and output variables specified by the user are referred to by their aliases throughout
-                the control file as shown in Figure 10. In the code snippet shown in Figure 10 the value
-                of the incident solar radiation is compared against the threshold</p>
-
-            <table class="image" align="center" vspace="30">
-              <caption align="bottom">Figure 4. MLE+ control design tab.</caption>
-              <tr><td><img src="assets/img/control.png" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>  
-            <table class="image" align="center" vspace="30">
-              <caption align="bottom">Figure 4. MLE+ control design tab.</caption>
-              <tr><td><img src="assets/img/code.jpg" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>  
-
-          </div>
-        </section>   
-        
-        <!-- Simulate
-        ================================================== -->
-        <section id="simulate">
-          <div class="row">
-            <div class="page-header">
-              <h1>Simulation and Assessment</h1>
-            </div>
-            <p>Once a control design has been completed, we can run the simulation or step through it\using the Matlab debugging environment.</p>
-
-            <ol>
-              <li>Click on the tab Simulate then click on button Run Simulation (Figure 11). This
-                will call EnergyPlus to run the building energy simulation with the parameters we
-                have specified.</li>
-              <li>A Windows command window will open and will show the progress of the simulation.</li>
-              <li>After the co-simulation has finished, MLE+ extracts and parses all output variables
-              generated by EnergyPlus, then lists them in a listbox (see Figure 11). Select one or 
-              multiple variables, then click the button Plot to plot them on the screen.</li>
-              <li>You can also save the data to the Matlab workspace by clicking the buttons Save all
-              or Save Selected</li>
-              <li>The building geometry is visualized in tab Building.</li>
-            </ol>
-
-            <table class="image" align="center" vspace="30">
-              <caption align="bottom">Figure 11. Plot and analyze simulation results of EnergyPlus.</caption>
-              <tr><td><img src="assets/img/simulate.png" alt="Pulpit rock" width="600" height="400"/></td></tr>
-            </table>
-
-            <p>Note that MLE+ decouples the simulation engine and the controller implementation. This
-              way we can tune the control scheme in Matlab, then assess its performance by running
-              multiple simulations without the need of modifying the EnergyPlus file.</p>
-          </div>
-        </section>
-        
-        <!-- Settings
-        ================================================== -->
-        <section id="settings">
-          <div class="row">
-            <div class="page-header">
-              <h1>Load, Save and Reset Projects Data. </h1>
-            </div>
-            <p>At the bottom of the window, you can find buttons to load a control design project from
-            a file, save a project to a file, and reset the current project data. A project file has the
-            extension .prj and contains all essential information of a control design project.</p>
-
-            <ol>
-              <li>Load Project: open previously saved projects.</li>
-              <li>Save Project: save all the configuration settings which have been entered so far to a
-                file. Note that this does not save your controller file, or your .idf file.</li>
-              <li>Reset Project: empty all fields in the graphical front-end. Note that this will not
-                erase the current project file, but only reset the configuration settings in the graphical
-                front-end.</li>
-              <li>Exit: exit the program.</li>
-            </ol>
-            <p>For your convenience, a project file for the tutorial example is included in the distribution.
-            You can load the project file ShadingProject.prj and switch directly to the tab Simulate
-            to run a simulation of the control design.</p>
-
-          </div>
-        </section>
-        
-        <!-- Projects
-        ================================================== -->
-        <section id="projects">
-          <div class="row">
-            <div class="page-header">
-              <h1>Other Sample Projects</h1>
-            </div>
-            
-            <h3>Legacy Example</h3>
-            <p>his folder contains the original example distributed with MLE+ Legacy. This example does
-            not make use of the MLE+ front end. You can run this example by executing runsimple.m
-            in Matlab. This example sets the Temperature Setpoints for a small building.</p>
-            
-            <h3>Green Scheduling vs. Uncoordinated Control</h3>
-            <p>Here we compared two different binary (ON/OFF) controls for keeping the temperature of
-            a small building inside the comfort level. Green Scheduling is a control scheme designed to
-            reduce peak power consumption while satisfying the temperature conditions. You can load
-            these projects by using the Load Project button.</p>
-            
-            <h3>MPC vs. Proportional Control</h3>
-            <p>These two cases implement continuous control schemes. The first control is a Model Predictive
-            controller using built-in functions in Matlab. This is compared against a very simple
-            proportional feedback loop. The model for the first strategy was generated using the System
-            Identification tab in MLE+. This tab allows you to design the disturbances you feed
-            your model for SYSID. Then, you can import this model directly into the Matlab’s built-in
-            system identification toolbox.</p>
-
-          </div>
-        </section>
+   
 
 
 
